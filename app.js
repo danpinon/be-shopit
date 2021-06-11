@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(fileUpload())
 app.use(cors({
-    origin: "*",
+    origin: null,
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     preflightContinue: false,
     optionsSuccessStatus: 204,
