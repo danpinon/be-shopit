@@ -14,7 +14,14 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use(cookieParser())
 app.use(fileUpload())
-app.use(cors({origin: ["http://localhost:3000", "https://thirsty-fermat-077770.netlify.app"]}))
+app.use(cors({
+    origin: ["http://localhost:3000", "https://thirsty-fermat-077770.netlify.app"],
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    allowedHeaders: ['Content-Type', 'Authorization']
+  }))
+
 
 
 
